@@ -286,7 +286,7 @@ jobs:
 
       # Generate SBOM for PR Images
       - name: Generate SBOM
-        uses: anchore/sbom-action@da167eac915b4e86f08b264dbdbc867b61be6f0c # v0.20.5
+        uses: anchore/sbom-action@aa0e114b2e19480f157109b9922bda359bd98b90 # v0.20.8
         with:
           image: ${{ steps.build-metadata.outputs.image_name }}@${{ steps.build-publish.outputs.image_digest }}
           format: spdx-json

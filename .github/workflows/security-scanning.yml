@@ -218,7 +218,7 @@ jobs:
 
       - name: Upload security scan results
         if: always() && steps.check-image.outputs.exists == 'true' && steps.check-image.outputs.skip_old_image == 'false'
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: security-scan-results-${{ matrix.containers.app }}-${{ matrix.containers.version }}-${{ matrix.containers.platform }}
           path: trivy-results.sarif
@@ -258,7 +258,7 @@ jobs:
           output-file: sbom-${{ matrix.containers.app }}-${{ matrix.containers.version }}-${{ matrix.containers.platform }}.spdx.json
 
       - name: Upload SBOM
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: sbom-${{ matrix.containers.app }}-${{ matrix.containers.version }}-${{ matrix.containers.platform }}
           path: sbom-${{ matrix.containers.app }}-${{ matrix.containers.version }}-${{ matrix.containers.platform }}.spdx.json
